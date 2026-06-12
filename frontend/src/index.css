@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  padding: 1.3rem 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+nav,
+.auth {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center  ;
+}
