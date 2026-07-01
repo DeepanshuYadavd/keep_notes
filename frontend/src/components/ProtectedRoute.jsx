@@ -1,12 +1,23 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const ProtectedRoute = ({ children }) => {
-  const isAuthenticated = true;
+  const { user, loading } = useAuth();
 
-  if (!isAuthenticated) {
-    return <Navigate to="/register" replace />;
+  if (loading) {
+    return (
+      <div className="premium-loader-container">
+        <div className="premium-loader"></div>
+        <p>Loading your space...</p>
+      </div>
+    );
   }
+
+  if (!user) {
+    return <Navigate to="/login" replace />;
+  }
+
   return children;
 };
 
